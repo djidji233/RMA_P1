@@ -18,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        btn_login.setOnClickListener() {
+        btn_login.setOnClickListener {
             if (user_first_name.text.isBlank() || user_last_name.text.isBlank() || user_workplace.text.isBlank()){
                 Toast.makeText(applicationContext,"Please fill in all the fields!",Toast.LENGTH_SHORT).show()
             } else if (!user_password.text.toString().equals(PASSWORD)){

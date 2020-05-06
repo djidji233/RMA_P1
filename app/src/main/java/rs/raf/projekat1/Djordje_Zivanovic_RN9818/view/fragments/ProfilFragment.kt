@@ -10,15 +10,14 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_profil.*
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.R
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.activities.EditProfilActivity
+import rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.activities.LoginActivity
 
 class ProfilFragment : Fragment(R.layout.fragment_profil){
 
     private lateinit var shared_pref : SharedPreferences
     private val USER_DATA = "UserData"
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    private fun fillInData(){
         shared_pref = this.requireActivity().getSharedPreferences(USER_DATA, Context.MODE_PRIVATE)
         val user_fname = shared_pref.getString("user_first_name","ERROR [ProfilFragment] user first name")
         user_first_name.setText(user_fname)
@@ -26,13 +25,30 @@ class ProfilFragment : Fragment(R.layout.fragment_profil){
         user_last_name.setText(user_lname)
         val user_wrk = shared_pref.getString("user_workplace", "ERROR [ProfilFragment] user workspace")
         user_workplace.setText(user_wrk)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        fillInData()
 
         btn_edit_user.setOnClickListener(){
             val intent = Intent(this.context, EditProfilActivity::class.java)
-            startActivity(intent)
+            startActivityForResult(intent,1)
         }
 
+        btn_logout.setOnClickListener(){
+            val intent = Intent(this.context, LoginActivity::class.java)
+            startActivity(intent)
+            this.requireActivity().finish()
+        }
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        fillInData()
     }
 
 }
