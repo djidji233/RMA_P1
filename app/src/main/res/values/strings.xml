@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">RMA_P1</string>
+    <string name="activity_login_header">Informacioni sistem za pracenje stanja pacijenata obolelih od Covid-19</string>
+    <string name="user_first_name">Unesite ime</string>
+    <string name="user_last_name">Unesite prezime</string>
+    <string name="user_workplace">Unesite ime bolnice u kojoj ste zaposleni</string>
+    <string name="user_password">Unesite pin</string>
+    <string name="login">Prijava</string>
+    <string name="menu_stanje">Stanje</string>
+    <string name="menu_unos">Unos</string>
+    <string name="menu_unos_header">Unos novog pacijenta</string>
+    <string name="patient_symptoms">Unesite simptome i opste stanje pacijenta</string>
+    <string name="patient_add">Dodaj u cekaonicu</string>
+    <string name="menu_liste">Liste</string>
+    <string name="menu_profil">Profil</string>
+    <string name="menu_profil_header">Podaci o zdravstvenom radniku</string>
+    <string name="menu_profil_ime_header">Ime:</string>
+    <string name="menu_profil_prezime_header">Prezime:</string>
+    <string name="menu_profil_bolnica_header">Bolnica:</string>
+    <string name="menu_profil_btn_edit">Izmeni</string>
+    <string name="menu_profil_btn_logout">Odjava</string>
+    <string name="menu_profil_edit_cancel">Odustani</string>
+    <string name="menu_stanje_cekaonica">Broj pacijenata u cekaonici</string>
+    <string name="menu_stanje_hospitalizovani">Broj hospitalizovanih pacijenata</string>
+    <string name="menu_stanje_otpusteni">Broj otpustenih pacijenata</string>
+    <string name="menu_stanje_header">Pregled brojnog stanja pacijenata</string>
+</resources>
