@@ -9,7 +9,9 @@ import rs.raf.projekat1.Djordje_Zivanovic_RN9818.R
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.model.Patient
 import java.text.SimpleDateFormat
 
-class PatientKartonActivity() : AppCompatActivity() {
+class PatientKartonActivity : AppCompatActivity() {
+
+    private lateinit var patient : Patient
 
     private fun fillInData(p : Patient){
         patient_first_name.setText(p.first_name)
@@ -26,13 +28,14 @@ class PatientKartonActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_karton)
 
-//        fillInData(patient)
+        patient = intent.getParcelableExtra("patient") as Patient
+        fillInData(patient)
 
-        btn_edit_patient_cancel.setOnClickListener(){
+        btn_edit_patient_cancel.setOnClickListener{
             finish()
         }
 
-        btn_edit_patient_change.setOnClickListener(){
+        btn_edit_patient_change.setOnClickListener{
             Toast.makeText(applicationContext,"Please fill in all the fields!", Toast.LENGTH_SHORT).show()
         }
 

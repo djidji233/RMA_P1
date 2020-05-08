@@ -36,7 +36,8 @@ class HospitalizovaniFragment: Fragment(R.layout.fragment_liste_hospitalizovani)
         patientAdapter = HospitalizovaniPatientAdapter(
             PatientDiffItemCallback(),
             {
-                val intent = Intent(this.context, PatientKartonActivity()::class.java)
+                val intent = Intent(this.context, PatientKartonActivity::class.java)
+                intent.putExtra("patient", it)
                 startActivity(intent)
             },
             {

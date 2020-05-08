@@ -126,8 +126,4 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun delete(p:Patient){
-        waiting_patients_list.remove(p)
-    }
-
 }
