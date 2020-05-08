@@ -27,13 +27,41 @@ class MainViewModel : ViewModel() {
                 "Name$i",
                 "Nameovic$i",
                 "Bas jezivi simptomi",
-                Calendar.getInstance().time
+                Date()
             )
             waiting_patients_list.add(patient)
         }
         val listToSubmit = mutableListOf<Patient>()
         listToSubmit.addAll(waiting_patients_list)
         waiting_patients.value = listToSubmit
+
+        val patient = Patient(
+            12,
+            pictureUrl,
+            "Bole",
+            "Bolestan",
+            "Bas jezivo bolestan",
+            Calendar.getInstance().time
+        )
+        hospitalized_patients_list.add(patient)
+        val listToSubmit2 = mutableListOf<Patient>()
+        listToSubmit2.addAll(hospitalized_patients_list)
+        hospitalized_patients.value = listToSubmit2
+
+        val patient2 = Patient(
+            12,
+            pictureUrl,
+            "Puste",
+            "Otpustenkovic",
+            "Ozdravijo",
+            Calendar.getInstance().time
+        )
+        patient2.release_date = Calendar.getInstance().time
+        released_patients_list.add(patient2)
+        val listToSubmit3 = mutableListOf<Patient>()
+        listToSubmit3.addAll(released_patients_list)
+        released_patients.value = listToSubmit3
+
     }
 
     fun getWaitingPatients() : LiveData<List<Patient>> {
@@ -62,7 +90,7 @@ class MainViewModel : ViewModel() {
 
     fun filterWaitingPatients(filter: String){
         val filteredList = waiting_patients_list.filter {
-            it.first_name.toLowerCase().startsWith(filter.toLowerCase()) ||
+            it.first_name.toLowerCase().startsWith(filter.toLowerCase()) or
             it.last_name.toLowerCase().startsWith(filter.toLowerCase())
         }
         waiting_patients.value = filteredList
@@ -70,7 +98,7 @@ class MainViewModel : ViewModel() {
 
     fun filterHospitalizedPatients(filter: String){
         val filteredList = hospitalized_patients_list.filter {
-            it.first_name.toLowerCase().startsWith(filter.toLowerCase()) ||
+            it.first_name.toLowerCase().startsWith(filter.toLowerCase()) or
             it.last_name.toLowerCase().startsWith(filter.toLowerCase())
         }
         hospitalized_patients.value = filteredList
@@ -122,6 +150,13 @@ class MainViewModel : ViewModel() {
             listToSubmit3.addAll(waiting_patients_list)
             waiting_patients.value = listToSubmit3
         }
+    }
+
+    fun delete(p : Patient){
+        waiting_patients_list.remove(p)
+        val listTOSubmit = mutableListOf<Patient>()
+        listTOSubmit.addAll(waiting_patients_list)
+        waiting_patients.value = listTOSubmit
     }
 
 }

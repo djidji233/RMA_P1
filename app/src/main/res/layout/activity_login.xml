@@ -49,7 +49,6 @@
             android:hint="@string/user_first_name"
             android:inputType="textPersonName"
             app:layout_constraintTop_toTopOf="@id/linearLayout"
-            app:layout_constraintBottom_toBottomOf="@id/linearLayout"
             app:layout_constraintEnd_toEndOf="@id/linearLayout"
             app:layout_constraintStart_toStartOf="@id/linearLayout"
             />

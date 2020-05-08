@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_unos"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/unos_novog_pacijentaTv"
@@ -21,24 +20,24 @@
         android:id="@+id/icon"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
         android:src="@drawable/ic_person_add_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/unos_novog_pacijentaTv" />
+        app:layout_constraintTop_toBottomOf="@id/unos_novog_pacijentaTv"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="30dp"
         android:orientation="vertical"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintTop_toBottomOf="@id/icon">
 
         <EditText
             android:id="@+id/patient_first_name"
@@ -50,7 +49,6 @@
             android:hint="@string/user_first_name"
             android:inputType="textPersonName"
             app:layout_constraintTop_toTopOf="@id/linearLayout"
-            app:layout_constraintBottom_toBottomOf="@id/linearLayout"
             app:layout_constraintEnd_toEndOf="@id/linearLayout"
             app:layout_constraintStart_toStartOf="@id/linearLayout"
             />
@@ -80,7 +78,7 @@
             android:id="@+id/btn_add_patient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="50dp"
             android:text="@string/patient_add" />
 
     </LinearLayout>
