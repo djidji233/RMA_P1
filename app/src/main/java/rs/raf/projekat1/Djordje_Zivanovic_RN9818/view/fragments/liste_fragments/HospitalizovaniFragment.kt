@@ -1,8 +1,8 @@
 package rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.fragments.liste_fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_liste_hospitalizovani.*
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.R
+import rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.activities.PatientKartonActivity
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.recycler.adapter.HospitalizovaniPatientAdapter
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.recycler.diff.PatientDiffItemCallback
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.viewmodels.MainViewModel
@@ -35,10 +36,11 @@ class HospitalizovaniFragment: Fragment(R.layout.fragment_liste_hospitalizovani)
         patientAdapter = HospitalizovaniPatientAdapter(
             PatientDiffItemCallback(),
             {
-                Toast.makeText(this.context, "Clicked on ${it.first_name}", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this.context, PatientKartonActivity()::class.java)
+                startActivity(intent)
             },
             {
-                mainViewModel.delete(it)
+                mainViewModel.moveToReleased(it,1)
             })
         recyclerList.adapter = patientAdapter
     }

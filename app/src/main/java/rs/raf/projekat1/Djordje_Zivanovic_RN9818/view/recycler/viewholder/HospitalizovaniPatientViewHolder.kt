@@ -10,15 +10,15 @@ import rs.raf.projekat1.Djordje_Zivanovic_RN9818.model.Patient
 
 class HospitalizovaniPatientViewHolder (
     override val containerView: View,
-    onItemClicked: (Int) -> Unit,
-    onDeleteClicked: (Int) -> Unit) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    onKartonClicked: (Int) -> Unit,
+    onOtpustClicked: (Int) -> Unit) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
     init {
-        containerView.setOnClickListener{
-            onItemClicked(adapterPosition)
+        btn_karton.setOnClickListener{
+            onKartonClicked(adapterPosition)
         }
-        btn_karton.setOnClickListener {
-            onDeleteClicked(adapterPosition)
+        btn_otpust.setOnClickListener {
+            onOtpustClicked(adapterPosition)
         }
     }
 

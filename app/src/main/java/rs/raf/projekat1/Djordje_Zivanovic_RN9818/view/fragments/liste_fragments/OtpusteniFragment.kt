@@ -32,14 +32,7 @@ class OtpusteniFragment: Fragment(R.layout.fragment_liste_otpusteni) {
 
     private fun initRecycler(){
         recyclerList.layoutManager = GridLayoutManager(this.context,2)
-        patientAdapter = OtpusteniPatientAdapter(
-            PatientDiffItemCallback(),
-            {
-                Toast.makeText(this.context, "Clicked on ${it.first_name}", Toast.LENGTH_SHORT).show()
-            },
-            {
-                mainViewModel.delete(it)
-            })
+        patientAdapter = OtpusteniPatientAdapter(PatientDiffItemCallback())
         recyclerList.adapter = patientAdapter
     }
 

@@ -10,8 +10,8 @@ import rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.recycler.viewholder.Cekaon
 
 class CekaonicaPatientAdapter(
     patientDiffItemCallback: PatientDiffItemCallback,
-    private val onContactClicked: (Patient) -> Unit,
-    private val onDeleteContactClicked: (Patient) -> Unit) : ListAdapter<Patient, CekaonicaPatientViewHolder>(patientDiffItemCallback){
+    private val onZdravClicked: (Patient) -> Unit,
+    private val onHospitalizacijaClicked: (Patient) -> Unit) : ListAdapter<Patient, CekaonicaPatientViewHolder>(patientDiffItemCallback){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CekaonicaPatientViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -20,11 +20,11 @@ class CekaonicaPatientAdapter(
             containerView,
             {
                 val patient = getItem(it)
-                onContactClicked(patient)
+                onZdravClicked(patient)
             },
             {
                 val patient = getItem(it)
-                onDeleteContactClicked(patient)
+                onHospitalizacijaClicked(patient)
             }
         )
     }

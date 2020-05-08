@@ -10,19 +10,7 @@ import rs.raf.projekat1.Djordje_Zivanovic_RN9818.model.Patient
 import java.text.SimpleDateFormat
 import java.util.*
 
-class OtpusteniPatientViewHolder (
-    override val containerView: View,
-    onItemClicked: (Int) -> Unit,
-    onDeleteClicked: (Int) -> Unit) : RecyclerView.ViewHolder(containerView), LayoutContainer {
-
-    init {
-        containerView.setOnClickListener{
-            onItemClicked(adapterPosition)
-        }
-//        btn_karton.setOnClickListener {
-//            onDeleteClicked(adapterPosition)
-//        }
-    }
+class OtpusteniPatientViewHolder (override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
     fun bind(patient: Patient){
         Picasso
@@ -33,7 +21,6 @@ class OtpusteniPatientViewHolder (
         patient_first_name.text = patient.first_name
         patient_last_name.text = patient.last_name
 
-        patient.release_date = Date()
         val datePattern = "dd.MM.yyyy"
         val dateFormat = SimpleDateFormat(datePattern)
         patient_release_date.text = "Otpusten: " + dateFormat.format(patient.release_date)

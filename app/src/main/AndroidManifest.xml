@@ -24,6 +24,7 @@
         <activity android:name=".view.activities.MainActivity" android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".view.activities.LoginActivity" />
         <activity android:name=".view.activities.EditProfilActivity" />
+        <activity android:name=".view.activities.PatientKartonActivity" />
 
     </application>
 </manifest>

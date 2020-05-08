@@ -35,33 +35,6 @@ class MainViewModel : ViewModel() {
         listToSubmit.addAll(waiting_patients_list)
         waiting_patients.value = listToSubmit
 
-        val patient = Patient(
-            12,
-            pictureUrl,
-            "Bole",
-            "Bolestan",
-            "Bas jezivo bolestan",
-            Calendar.getInstance().time
-        )
-        hospitalized_patients_list.add(patient)
-        val listToSubmit2 = mutableListOf<Patient>()
-        listToSubmit2.addAll(hospitalized_patients_list)
-        hospitalized_patients.value = listToSubmit2
-
-        val patient2 = Patient(
-            12,
-            pictureUrl,
-            "Puste",
-            "Otpustenkovic",
-            "Ozdravijo",
-            Calendar.getInstance().time
-        )
-        patient2.release_date = Calendar.getInstance().time
-        released_patients_list.add(patient2)
-        val listToSubmit3 = mutableListOf<Patient>()
-        listToSubmit3.addAll(released_patients_list)
-        released_patients.value = listToSubmit3
-
     }
 
     fun getWaitingPatients() : LiveData<List<Patient>> {
@@ -133,6 +106,7 @@ class MainViewModel : ViewModel() {
 
     fun moveToReleased(p: Patient, flag:Int){
         // flag = 0 from waiting, flag = 1 - from hospitalized
+        p.release_date = Date()
 
         released_patients_list.add(p)
         val listToSubmit1 = mutableListOf<Patient>()
@@ -152,11 +126,8 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun delete(p : Patient){
+    fun delete(p:Patient){
         waiting_patients_list.remove(p)
-        val listTOSubmit = mutableListOf<Patient>()
-        listTOSubmit.addAll(waiting_patients_list)
-        waiting_patients.value = listTOSubmit
     }
 
 }

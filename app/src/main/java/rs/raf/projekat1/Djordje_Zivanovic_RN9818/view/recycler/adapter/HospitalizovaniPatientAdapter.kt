@@ -10,8 +10,8 @@ import rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.recycler.viewholder.Hospit
 
 class HospitalizovaniPatientAdapter (
     patientDiffItemCallback: PatientDiffItemCallback,
-    private val onContactClicked: (Patient) -> Unit,
-    private val onDeleteContactClicked: (Patient) -> Unit) : ListAdapter<Patient, HospitalizovaniPatientViewHolder>(patientDiffItemCallback){
+    private val onKartonClicked: (Patient) -> Unit,
+    private val onOtpustClicked: (Patient) -> Unit) : ListAdapter<Patient, HospitalizovaniPatientViewHolder>(patientDiffItemCallback){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HospitalizovaniPatientViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -20,11 +20,11 @@ class HospitalizovaniPatientAdapter (
             containerView,
             {
                 val patient = getItem(it)
-                onContactClicked(patient)
+                onKartonClicked(patient)
             },
             {
                 val patient = getItem(it)
-                onDeleteContactClicked(patient)
+                onOtpustClicked(patient)
             }
         )
     }

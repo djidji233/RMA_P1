@@ -37,10 +37,10 @@ class CekaonicaFragment: Fragment(R.layout.fragment_liste_cekaonica) {
         patientAdapter = CekaonicaPatientAdapter(
             PatientDiffItemCallback(),
             {
-                Toast.makeText(this.context, "Clicked on ${it.first_name}", Toast.LENGTH_SHORT).show()
+                mainViewModel.moveToReleased(it,0)
             },
             {
-                mainViewModel.delete(it)
+                mainViewModel.moveToHospitalized(it)
             })
         recyclerList.adapter = patientAdapter
     }

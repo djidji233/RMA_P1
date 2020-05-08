@@ -10,15 +10,15 @@ import rs.raf.projekat1.Djordje_Zivanovic_RN9818.model.Patient
 
 class CekaonicaPatientViewHolder (
     override val containerView: View,
-    onItemClicked: (Int) -> Unit,
-    onDeleteClicked: (Int) -> Unit) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    onZdravClicked: (Int) -> Unit,
+    onHospitalizacijaClicked: (Int) -> Unit) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
     init {
-        containerView.setOnClickListener{
-            onItemClicked(adapterPosition)
+        btn_zdrav.setOnClickListener{
+            onZdravClicked(adapterPosition)
         }
-        btn_zdrav.setOnClickListener {
-            onDeleteClicked(adapterPosition)
+        btn_hospitalizacija.setOnClickListener {
+            onHospitalizacijaClicked(adapterPosition)
         }
     }
 
