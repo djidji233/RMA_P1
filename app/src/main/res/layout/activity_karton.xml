@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Karton pacijenta" />
+        android:text="@string/karton_pacijenta_header" />
 
     <ImageView
         android:id="@+id/icon"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="10dp"
-            android:text="Stanje pri prijemu"/>
+            android:text="@string/karton_pacijenta_stanje_old"/>
 
         <EditText
             android:id="@+id/patient_symptoms_old"
@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="10dp"
-            android:text="Trenutno stanje"/>
+            android:text="@string/karton_pacijenta_stanje_current"/>
 
         <EditText
             android:id="@+id/patient_symptoms_new"
@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="10dp"
-            android:text="Datum prijema"/>
+            android:text="@string/karton_pacijenta_datum_prijema"/>
 
         <TextView
             android:id="@+id/patient_acceptance_date"

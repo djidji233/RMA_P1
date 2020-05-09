@@ -97,8 +97,4 @@
                 android:text="@string/menu_profil_btn_edit"/>
         </LinearLayout>
 
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

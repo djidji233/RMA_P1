@@ -67,16 +67,16 @@
 
             <Button
                 android:id="@+id/btn_karton"
-                android:text="Karton"
+                android:text="@string/hospitalizovani_btn_karton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginEnd="20dp"/>
             <Button
                 android:id="@+id/btn_otpust"
-                android:text="Otpust"
+                android:text="@string/hospitalizovani_btn_otpust"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginEnd="10dp"/>
         </LinearLayout>
 
 

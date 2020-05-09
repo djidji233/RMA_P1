@@ -37,38 +37,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"
             android:text="@string/menu_profil_ime_header"/>
         <TextView
             android:id="@+id/user_first_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"
             android:text="@string/menu_profil_prezime_header"/>
         <TextView
             android:id="@+id/user_last_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"
             android:text="@string/menu_profil_bolnica_header"/>
         <TextView
             android:id="@+id/user_workplace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
@@ -86,13 +86,13 @@
             android:id="@+id/btn_edit_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="25dp"
+            android:layout_marginEnd="25dp"
             android:text="@string/menu_profil_btn_edit"/>
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
             android:text="@string/menu_profil_btn_logout"/>
     </LinearLayout>
 

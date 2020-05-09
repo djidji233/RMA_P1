@@ -24,4 +24,14 @@
     <string name="menu_stanje_hospitalizovani">Broj hospitalizovanih pacijenata</string>
     <string name="menu_stanje_otpusteni">Broj otpustenih pacijenata</string>
     <string name="menu_stanje_header">Pregled brojnog stanja pacijenata</string>
+    <string name="karton_pacijenta_header">Karton pacijenta</string>
+    <string name="karton_pacijenta_stanje_old">Stanje pri prijemu:</string>
+    <string name="karton_pacijenta_stanje_current">Trenutno stanje:</string>
+    <string name="karton_pacijenta_datum_prijema">Datum prijema:</string>
+    <string name="cekaonica_btn_zdrav">Zdrav</string>
+    <string name="cekaonica_btn_hsopitalizacija">Hospitalizacija</string>
+    <string name="search_bar_hint">Pretraga</string>
+    <string name="list_size_default">0</string>
+    <string name="hospitalizovani_btn_karton">Karton</string>
+    <string name="hospitalizovani_btn_otpust">Otpust</string>
 </resources>
