@@ -15,5 +15,6 @@ data class Patient(
     var acceptance_date: Date
 ) : Parcelable {
 
+    var current_symptoms: String? = null
     var release_date: Date? = null
 }

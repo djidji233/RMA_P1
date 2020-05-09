@@ -1,5 +1,6 @@
 package rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.fragments
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -34,7 +35,7 @@ class ProfilFragment : Fragment(R.layout.fragment_profil){
 
         btn_edit_user.setOnClickListener(){
             val intent = Intent(this.context, EditProfilActivity::class.java)
-            startActivityForResult(intent,1)
+            startActivityForResult(intent, 1)
         }
 
         btn_logout.setOnClickListener(){

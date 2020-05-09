@@ -29,6 +29,7 @@ class MainViewModel : ViewModel() {
                 "Bas jezivi simptomi",
                 Date()
             )
+            patient.current_symptoms = patient.symptoms
             waiting_patients_list.add(patient)
         }
         val listToSubmit = mutableListOf<Patient>()
@@ -87,6 +88,7 @@ class MainViewModel : ViewModel() {
 
     fun addWaitingPatient(name: String, lastname:String, sympt:String){
         val newP = Patient(nextId++,pictureUrl,name,lastname,sympt,Calendar.getInstance().time)
+        newP.current_symptoms = newP.symptoms
         waiting_patients_list.add(newP)
         val listToSubmit = mutableListOf<Patient>()
         listToSubmit.addAll(waiting_patients_list)
@@ -124,6 +126,22 @@ class MainViewModel : ViewModel() {
             listToSubmit3.addAll(waiting_patients_list)
             waiting_patients.value = listToSubmit3
         }
+    }
+
+    fun updateHospitalizedPatient(newPatient : Patient){
+        for (p in hospitalized_patients_list){
+            if (p.id == newPatient.id){
+                p.first_name = newPatient.first_name
+                p.last_name = newPatient.last_name
+                p.symptoms = newPatient.symptoms
+                p.current_symptoms = newPatient.current_symptoms
+
+                val listToSubmit2 = mutableListOf<Patient>()
+                listToSubmit2.addAll(hospitalized_patients_list)
+                hospitalized_patients.value = listToSubmit2
+            }
+        }
+
     }
 
 }

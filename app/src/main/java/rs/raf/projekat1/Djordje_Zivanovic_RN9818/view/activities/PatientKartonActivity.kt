@@ -1,5 +1,6 @@
 package rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.activities
 
+import android.app.Activity
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
@@ -17,7 +18,7 @@ class PatientKartonActivity : AppCompatActivity() {
         patient_first_name.setText(p.first_name)
         patient_last_name.setText(p.last_name)
         patient_symptoms_old.setText(p.symptoms)
-        patient_symptoms_new.setText(p.symptoms)
+        patient_symptoms_new.setText(p.current_symptoms)
 
         val datePattern = "dd.MM.yyyy"
         val dateFormat = SimpleDateFormat(datePattern)
@@ -32,11 +33,26 @@ class PatientKartonActivity : AppCompatActivity() {
         fillInData(patient)
 
         btn_edit_patient_cancel.setOnClickListener{
+            setResult(Activity.RESULT_CANCELED)
             finish()
         }
 
         btn_edit_patient_change.setOnClickListener{
-            Toast.makeText(applicationContext,"Please fill in all the fields!", Toast.LENGTH_SHORT).show()
+            if(patient_first_name.text.isNotBlank()&&patient_last_name.text.isNotBlank()
+                &&patient_symptoms_old.text.isNotBlank()&&patient_symptoms_new.text.isNotBlank()){
+
+                patient.first_name = patient_first_name.text.toString()
+                patient.last_name = patient_last_name.text.toString()
+                patient.symptoms = patient_symptoms_old.text.toString()
+                patient.current_symptoms = patient_symptoms_new.text.toString()
+                intent.putExtra("patient", patient)
+
+                setResult(Activity.RESULT_OK,intent)
+                finish()
+
+            } else {
+                Toast.makeText(this,"Please fill in all the fields",Toast.LENGTH_SHORT).show()
+            }
         }
 
     }

@@ -1,5 +1,7 @@
 package rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.fragments.liste_fragments
 
+import android.app.Activity
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -10,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_liste_hospitalizovani.*
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.R
+import rs.raf.projekat1.Djordje_Zivanovic_RN9818.model.Patient
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.activities.PatientKartonActivity
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.recycler.adapter.HospitalizovaniPatientAdapter
 import rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.recycler.diff.PatientDiffItemCallback
@@ -38,7 +41,7 @@ class HospitalizovaniFragment: Fragment(R.layout.fragment_liste_hospitalizovani)
             {
                 val intent = Intent(this.context, PatientKartonActivity::class.java)
                 intent.putExtra("patient", it)
-                startActivity(intent)
+                startActivityForResult(intent, 1)
             },
             {
                 mainViewModel.moveToReleased(it,1)
@@ -55,6 +58,14 @@ class HospitalizovaniFragment: Fragment(R.layout.fragment_liste_hospitalizovani)
     private fun initListeners(){
         searchText.doAfterTextChanged {
             mainViewModel.filterHospitalizedPatients(it.toString())
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==1 && resultCode==RESULT_OK) {
+            val patient: Patient = data?.getParcelableExtra("patient") as Patient
+            mainViewModel.updateHospitalizedPatient(patient)
         }
     }
 }
