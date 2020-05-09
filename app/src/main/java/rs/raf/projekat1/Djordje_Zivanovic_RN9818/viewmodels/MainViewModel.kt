@@ -128,20 +128,17 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun updateHospitalizedPatient(newPatient : Patient){
-        for (p in hospitalized_patients_list){
-            if (p.id == newPatient.id){
-                p.first_name = newPatient.first_name
-                p.last_name = newPatient.last_name
-                p.symptoms = newPatient.symptoms
-                p.current_symptoms = newPatient.current_symptoms
-
-                val listToSubmit2 = mutableListOf<Patient>()
-                listToSubmit2.addAll(hospitalized_patients_list)
-                hospitalized_patients.value = listToSubmit2
-            }
-        }
-
+    fun removeFromHospitalized(p:Patient){
+        hospitalized_patients_list.remove(p)
+        val listToSubmit2 = mutableListOf<Patient>()
+        listToSubmit2.addAll(hospitalized_patients_list)
+        hospitalized_patients.value = listToSubmit2
     }
 
+    fun addToHospitalized(p:Patient){
+        hospitalized_patients_list.add(p)
+        val listToSubmit2 = mutableListOf<Patient>()
+        listToSubmit2.addAll(hospitalized_patients_list)
+        hospitalized_patients.value = listToSubmit2
+    }
 }

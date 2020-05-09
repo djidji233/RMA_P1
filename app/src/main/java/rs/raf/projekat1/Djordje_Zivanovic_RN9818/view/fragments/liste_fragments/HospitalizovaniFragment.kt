@@ -64,8 +64,11 @@ class HospitalizovaniFragment: Fragment(R.layout.fragment_liste_hospitalizovani)
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode==1 && resultCode==RESULT_OK) {
-            val patient: Patient = data?.getParcelableExtra("patient") as Patient
-            mainViewModel.updateHospitalizedPatient(patient)
+            val patient_old: Patient = data?.getParcelableExtra("patient") as Patient
+            val patient_new: Patient = data.getParcelableExtra("patient_updated") as Patient
+            mainViewModel.removeFromHospitalized(patient_old)
+            mainViewModel.addToHospitalized(patient_new)
+
         }
     }
 }

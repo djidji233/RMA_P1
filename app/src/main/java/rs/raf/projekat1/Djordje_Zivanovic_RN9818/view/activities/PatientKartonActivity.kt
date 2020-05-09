@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat
 class PatientKartonActivity : AppCompatActivity() {
 
     private lateinit var patient : Patient
+    private lateinit var patient_updated : Patient
 
     private fun fillInData(p : Patient){
         patient_first_name.setText(p.first_name)
@@ -31,6 +32,7 @@ class PatientKartonActivity : AppCompatActivity() {
 
         patient = intent.getParcelableExtra("patient") as Patient
         fillInData(patient)
+        patient_updated = patient.copy()
 
         btn_edit_patient_cancel.setOnClickListener{
             setResult(Activity.RESULT_CANCELED)
@@ -41,11 +43,13 @@ class PatientKartonActivity : AppCompatActivity() {
             if(patient_first_name.text.isNotBlank()&&patient_last_name.text.isNotBlank()
                 &&patient_symptoms_old.text.isNotBlank()&&patient_symptoms_new.text.isNotBlank()){
 
-                patient.first_name = patient_first_name.text.toString()
-                patient.last_name = patient_last_name.text.toString()
-                patient.symptoms = patient_symptoms_old.text.toString()
-                patient.current_symptoms = patient_symptoms_new.text.toString()
+                patient_updated.first_name = patient_first_name.text.toString()
+                patient_updated.last_name = patient_last_name.text.toString()
+                patient_updated.symptoms = patient_symptoms_old.text.toString()
+                patient_updated.current_symptoms = patient_symptoms_new.text.toString()
+
                 intent.putExtra("patient", patient)
+                intent.putExtra("patient_updated", patient_updated)
 
                 setResult(Activity.RESULT_OK,intent)
                 finish()
