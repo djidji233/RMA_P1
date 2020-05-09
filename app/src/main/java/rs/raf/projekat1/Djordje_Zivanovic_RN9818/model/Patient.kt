@@ -12,11 +12,9 @@ data class Patient(
     var first_name: String,
     var last_name: String,
     var symptoms: String,
+    var current_symptoms: String,
     var acceptance_date: Date
 ) : Parcelable {
 
-
-
-    var current_symptoms: String? = null
     var release_date: Date? = null
 }

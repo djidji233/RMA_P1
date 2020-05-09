@@ -27,9 +27,9 @@ class MainViewModel : ViewModel() {
                 "Name$i",
                 "Nameovic$i",
                 "Bas jezivi simptomi",
+                "Bas jezivi simptomi",
                 Date()
             )
-            patient.current_symptoms = patient.symptoms
             waiting_patients_list.add(patient)
         }
         val listToSubmit = mutableListOf<Patient>()
@@ -87,8 +87,7 @@ class MainViewModel : ViewModel() {
     }
 
     fun addWaitingPatient(name: String, lastname:String, sympt:String){
-        val newP = Patient(nextId++,pictureUrl,name,lastname,sympt,Calendar.getInstance().time)
-        newP.current_symptoms = newP.symptoms
+        val newP = Patient(nextId++,pictureUrl,name,lastname,sympt,sympt,Date())
         waiting_patients_list.add(newP)
         val listToSubmit = mutableListOf<Patient>()
         listToSubmit.addAll(waiting_patients_list)
