@@ -15,7 +15,6 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun init(){
-
         val sharedPref = getSharedPreferences(USER_DATA, Context.MODE_PRIVATE)
         val username = sharedPref.getString("user_first_name", "")
 
@@ -28,7 +27,6 @@ class SplashActivity : AppCompatActivity() {
         }
 
         finish()
-        
     }
 
 }

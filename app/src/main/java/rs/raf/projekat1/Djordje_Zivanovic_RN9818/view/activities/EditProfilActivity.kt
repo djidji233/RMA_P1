@@ -31,6 +31,7 @@ class EditProfilActivity : AppCompatActivity() {
         user_workplace.setText(user_wrk)
 
         btn_edit_user_cancel.setOnClickListener(){
+            setResult(Activity.RESULT_CANCELED)
             finish()
         }
 

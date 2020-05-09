@@ -1,6 +1,7 @@
 package rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.fragments
 
 import android.app.Activity
+import android.app.Activity.RESULT_OK
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -49,8 +50,9 @@ class ProfilFragment : Fragment(R.layout.fragment_profil){
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
-        fillInData()
+        if(requestCode==1 && resultCode==RESULT_OK){
+            fillInData()
+        }
     }
 
 }
