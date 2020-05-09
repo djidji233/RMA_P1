@@ -40,6 +40,7 @@ class ProfilFragment : Fragment(R.layout.fragment_profil){
 
         btn_logout.setOnClickListener(){
             val intent = Intent(this.context, LoginActivity::class.java)
+            shared_pref.edit().clear().apply()
             startActivity(intent)
             this.requireActivity().finish()
         }

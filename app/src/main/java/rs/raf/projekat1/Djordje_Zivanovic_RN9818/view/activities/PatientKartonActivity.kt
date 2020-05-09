@@ -1,7 +1,6 @@
 package rs.raf.projekat1.Djordje_Zivanovic_RN9818.view.activities
 
 import android.app.Activity
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity

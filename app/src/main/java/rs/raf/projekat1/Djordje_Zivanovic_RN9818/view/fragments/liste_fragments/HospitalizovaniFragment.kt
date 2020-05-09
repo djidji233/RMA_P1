@@ -68,7 +68,6 @@ class HospitalizovaniFragment: Fragment(R.layout.fragment_liste_hospitalizovani)
             val patient_new: Patient = data.getParcelableExtra("patient_updated") as Patient
             mainViewModel.removeFromHospitalized(patient_old)
             mainViewModel.addToHospitalized(patient_new)
-
         }
     }
 }
