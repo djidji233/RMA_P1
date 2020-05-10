@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/logo"
@@ -17,10 +17,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
-        android:layout_width="180dp"
+        android:id="@+id/login_header"
+        style="@style/HeaderFontStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/activity_login_header"
         app:layout_constraintTop_toBottomOf="@id/logo"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,13 +35,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintTop_toBottomOf="@id/login_header"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         >
 
         <EditText
+            style="@style/BasicFontStyle"
             android:id="@+id/user_first_name"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="20dp"
@@ -54,6 +57,7 @@
             />
 
         <EditText
+            style="@style/BasicFontStyle"
             android:id="@+id/user_last_name"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="20dp"
@@ -64,6 +68,7 @@
             android:inputType="textPersonName"/>
 
         <EditText
+            style="@style/BasicFontStyle"
             android:id="@+id/user_workplace"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="20dp"
@@ -74,6 +79,7 @@
             android:inputType="textPersonName"/>
 
         <EditText
+            style="@style/BasicFontStyle"
             android:id="@+id/user_password"
             android:layout_marginBottom="20dp"
             android:layout_width="wrap_content"
@@ -83,6 +89,7 @@
             android:inputType="textPassword"/>
 
         <Button
+            style="@style/ButtonFontStyle"
             android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -3,13 +3,38 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#7F3AB7</item>
+        <item name="colorPrimaryDark">#550DC1</item>
+        <item name="colorAccent">#DDC10A</item>
     </style>
     <!-- Splash screen theme -->
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/background</item>
     </style>
+
+    <!-- IO Font style -->
+    <style name="BasicFontStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#1E1B1B</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- Small Headers Font style -->
+    <style name="BasicHeaderFontStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- Header Font style -->
+    <style name="HeaderFontStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">monospace</item>
+    </style>
+    <!-- Button Font style -->
+    <style name="ButtonFontStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 
 </resources>

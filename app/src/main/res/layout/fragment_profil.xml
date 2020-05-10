@@ -7,6 +7,8 @@
     android:gravity="center_horizontal">
 
     <TextView
+        style="@style/HeaderFontStyle"
+        android:gravity="center"
         android:id="@+id/podaci_o_korisnikuTv"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +21,7 @@
         android:id="@+id/icon"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/ic_person_outline_black_24dp"
         app:layout_constraintTop_toBottomOf="@id/podaci_o_korisnikuTv"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,36 +37,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/icon">
         <TextView
+            style="@style/BasicHeaderFontStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"
             android:text="@string/menu_profil_ime_header"/>
         <TextView
+            style="@style/BasicFontStyle"
             android:id="@+id/user_first_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"/>
         <TextView
+            style="@style/BasicHeaderFontStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"
             android:text="@string/menu_profil_prezime_header"/>
         <TextView
+            style="@style/BasicFontStyle"
             android:id="@+id/user_last_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"/>
         <TextView
+            style="@style/BasicHeaderFontStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginBottom="10dp"
             android:text="@string/menu_profil_bolnica_header"/>
         <TextView
+            style="@style/BasicFontStyle"
             android:id="@+id/user_workplace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,12 +91,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:orientation="horizontal">
         <Button
+            style="@style/ButtonFontStyle"
             android:id="@+id/btn_edit_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="25dp"
             android:text="@string/menu_profil_btn_edit"/>
         <Button
+            style="@style/ButtonFontStyle"
             android:id="@+id/btn_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -40,6 +40,7 @@
 
                 <TextView
                     android:id="@+id/patient_first_name"
+                    style="@style/BasicFontStyle"
                     android:layout_gravity="left"
                     android:padding="5dp"
                     android:layout_width="wrap_content"
@@ -47,6 +48,7 @@
 
                 <TextView
                     android:id="@+id/patient_last_name"
+                    style="@style/BasicFontStyle"
                     android:layout_gravity="left"
                     android:padding="5dp"
                     android:layout_width="wrap_content"
@@ -66,12 +68,14 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <Button
+                style="@style/ButtonFontStyle"
                 android:id="@+id/btn_karton"
                 android:text="@string/hospitalizovani_btn_karton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"/>
             <Button
+                style="@style/ButtonFontStyle"
                 android:id="@+id/btn_otpust"
                 android:text="@string/hospitalizovani_btn_otpust"
                 android:layout_width="150dp"
